@@ -19,6 +19,20 @@ defmodule ExGecko do
     end
   end
 
+  @type simple_price_params :: %{
+          required(:ids) => String.t(),
+          required(:vs_currencies) => String.t(),
+          optional(:include_market_cap) => boolean(),
+          optional(:include_24hr_vol) => boolean(),
+          optional(:include_24hr_change) => boolean(),
+          optional(:include_last_updated_at) => boolean()
+        }
+
+  @spec simple_price(simple_price_params) :: {:ok, any()} | error
+  def simple_price(params) do
+    HttpClient.get("simple/price", params)
+  end
+
   @type coins_markets_params :: %{
           required(:vs_currency) => String.t(),
           optional(:ids) => String.t(),
