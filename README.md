@@ -1,7 +1,6 @@
 # ExGecko [![Build Status](https://github.com/patrykwozinski/ex-gecko/workflows/CI/badge.svg)](https://github.com/patrykwozinski/ex-gecko/actions)
 
-
-**TODO: Add description**
+This package is an adapter for using [CoinGecko](https://coingecko.com). Still under development.
 
 ## Installation
 
