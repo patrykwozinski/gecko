@@ -13,13 +13,18 @@ defmodule ExGecko.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       docs: docs(),
-      package: package()
+      package: package(),
+      dialyzer: [
+        plt_add_deps: :apps_direct,
+        plt_add_apps: [],
+        plt_ignore_apps: [:logger]
+      ]
     ]
   end
 
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger, :typed_struct]
     ]
   end
 
