@@ -23,6 +23,7 @@ In a current version we're not supporting all CoinGecko's endpoints yet. There i
 #### Simple
 - `api/v3/simple/price`
 - `api/v3/simple/token_price/{id}`
+- `api/v3/simple/supported_vs_currencies`
 
 #### Coins
 - `api/v3/coins/markets`
