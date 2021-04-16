@@ -11,7 +11,8 @@ defmodule ExGecko.MixProject do
       version: @version,
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      docs: docs()
     ]
   end
 
@@ -28,6 +29,13 @@ defmodule ExGecko.MixProject do
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:httpoison, "~> 1.8"},
       {:poison, "~> 4.0"}
+    ]
+  end
+
+  defp docs do
+    [
+      main: "readme",
+      extras: ["README.md"]
     ]
   end
 end
