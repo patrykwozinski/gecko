@@ -12,7 +12,8 @@ defmodule ExGecko.MixProject do
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      docs: docs()
+      docs: docs(),
+      package: package()
     ]
   end
 
@@ -36,6 +37,14 @@ defmodule ExGecko.MixProject do
     [
       main: "readme",
       extras: ["README.md"]
+    ]
+  end
+
+  defp package do
+    [
+      files: ~w(lib .formatter.exs mix.exs README*),
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/patrykwozinski/ex-gecko"}
     ]
   end
 end
