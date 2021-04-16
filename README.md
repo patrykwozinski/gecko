@@ -13,3 +13,10 @@ def deps do
   ]
 end
 ```
+
+
+## Supported endpoints
+In a current version we're not supporting all CoinGecko's endpoints yet. There is a list of currently supported:
+- `api/v3/ping`
+- `api/v3/coins/markets`
+- `api/v3/coins/{coinId}/market_chart`
