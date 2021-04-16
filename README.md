@@ -1,4 +1,4 @@
-# ExGecko [![Build Status](https://github.com/patrykwozinski/ex-gecko/workflows/CI/badge.svg)](https://github.com/patrykwozinski/ex-gecko/actions)
+# ExGecko [![Build Status](https://github.com/patrykwozinski/ex-gecko/workflows/CI/badge.svg)](https://github.com/patrykwozinski/ex-gecko/actions) [![Hex pm](https://img.shields.io/hexpm/v/ex-gecko.svg?style=flat)](https://hex.pm/packages/ex-gecko)
 
 This package is an adapter for using [CoinGecko](https://coingecko.com). Still under development.
 
