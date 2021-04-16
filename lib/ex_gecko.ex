@@ -50,6 +50,11 @@ defmodule ExGecko do
     HttpClient.get("simple/token_price/#{id}", params)
   end
 
+  @spec simple_supported_vs_currencies() :: {:ok, list(String.t())} | error
+  def simple_supported_vs_currencies do
+    HttpClient.get("simple/supported_vs_currencies")
+  end
+
   @type coins_markets_params :: %{
           required(:vs_currency) => String.t(),
           optional(:ids) => String.t(),
