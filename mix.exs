@@ -4,6 +4,8 @@ defmodule ExGecko.MixProject do
   def project do
     [
       app: :ex_gecko,
+      name: "ExGecko",
+      description: "A tool to retrieve an information about cryptocurrency world from a CoinGecko.com",
       version: "0.1.0",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
