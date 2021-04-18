@@ -197,7 +197,9 @@ defmodule ExGecko do
 
   @type contract_market_chart_params :: %{
           required(:id) => String.t(),
-          required(:contract_address) => String.t()
+          required(:contract_address) => String.t(),
+          required(:vs_currency) => String.t(),
+          required(:days) => String.t()
         }
 
   @spec contract_market_chart(contract_market_chart_params) :: {:ok, map()} | error
