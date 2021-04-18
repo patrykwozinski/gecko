@@ -194,4 +194,19 @@ defmodule ExGecko do
   def contract(%{id: id, contract_address: contract_address}) do
     HttpClient.get("coins/#{id}/contract/#{contract_address}")
   end
+
+  @type contract_market_chart_params :: %{
+          required(:id) => String.t(),
+          required(:contract_address) => String.t()
+        }
+
+  @spec contract_market_chart(contract_market_chart_params) :: {:ok, map()} | error
+  def contract_market_chart(params = %{id: id, contract_address: contract_address}) do
+    params =
+      params
+      |> Map.delete(:id)
+      |> Map.delete(:contract_address)
+
+    HttpClient.get("coins/#{id}/contract/#{contract_address}/market_chart", params)
+  end
 end
