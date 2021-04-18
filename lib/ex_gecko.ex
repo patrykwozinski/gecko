@@ -131,4 +131,17 @@ defmodule ExGecko do
 
     HttpClient.get("coins/#{id}/tickers", params)
   end
+
+  @type coins_history_params :: %{
+          required(:id) => String.t(),
+          required(:date) => String.t(),
+          optional(:localization) => String.t()
+        }
+
+  @spec coins_history(coins_history_params) :: {:ok, map()} | error
+  def coins_history(params = %{id: id}) do
+    params = Map.delete(params, :id)
+
+    HttpClient.get("coins/#{id}/history", params)
+  end
 end
