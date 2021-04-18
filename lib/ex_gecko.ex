@@ -184,4 +184,14 @@ defmodule ExGecko do
 
     HttpClient.get("coins/#{id}/ohlc", params)
   end
+
+  @type contract_params :: %{
+          required(:id) => String.t(),
+          required(:contract_address) => String.t()
+        }
+
+  @spec contract(contract_params) :: {:ok, map()} | error
+  def contract(%{id: id, contract_address: contract_address}) do
+    HttpClient.get("coins/#{id}/contract/#{contract_address}")
+  end
 end
