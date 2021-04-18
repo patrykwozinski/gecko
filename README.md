@@ -35,3 +35,5 @@ In a current version we're not supporting all CoinGecko's endpoints yet. There i
 - `api/v3/coins/{id}/market_chart/range`
 - `api/v3/coins/{id}/status_updates`
 - `api/v3/coins/{id}/ohlc`
+
+#### Contract
