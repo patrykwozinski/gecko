@@ -171,4 +171,17 @@ defmodule ExGecko do
 
     HttpClient.get("coins/#{id}/status_updates", params)
   end
+
+  @type coins_ohlc_params :: %{
+          required(:id) => String.t(),
+          required(:vs_currency) => String.t(),
+          optional(:days) => pos_integer()
+        }
+
+  @spec coins_ohlc(coins_ohlc_params) :: {:ok, map()} | error
+  def coins_ohlc(params = %{id: id}) do
+    params = Map.delete(params, :id)
+
+    HttpClient.get("coins/#{id}/ohlc", params)
+  end
 end
