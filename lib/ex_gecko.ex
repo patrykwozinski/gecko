@@ -115,4 +115,20 @@ defmodule ExGecko do
 
     HttpClient.get("coins/#{id}", params)
   end
+
+  @type coins_tickers_params :: %{
+          required(:id) => String.t(),
+          optional(:exchange_ids) => String.t(),
+          optional(:include_exchange_logo) => String.t(),
+          optional(:page) => non_neg_integer(),
+          optional(:order) => String.t(),
+          optional(:depth) => String.t()
+        }
+
+  @spec coins_tickers(coins_tickers_params) :: {:ok, map()} | error
+  def coins_tickers(params = %{id: id}) do
+    params = Map.delete(params, :id)
+
+    HttpClient.get("coins/#{id}/tickers", params)
+  end
 end
