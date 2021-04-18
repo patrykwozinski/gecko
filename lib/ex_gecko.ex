@@ -171,4 +171,62 @@ defmodule ExGecko do
 
     HttpClient.get("coins/#{id}/status_updates", params)
   end
+
+  @type coins_ohlc_params :: %{
+          required(:id) => String.t(),
+          required(:vs_currency) => String.t(),
+          optional(:days) => pos_integer()
+        }
+
+  @spec coins_ohlc(coins_ohlc_params) :: {:ok, map()} | error
+  def coins_ohlc(params = %{id: id}) do
+    params = Map.delete(params, :id)
+
+    HttpClient.get("coins/#{id}/ohlc", params)
+  end
+
+  @type contract_params :: %{
+          required(:id) => String.t(),
+          required(:contract_address) => String.t()
+        }
+
+  @spec contract(contract_params) :: {:ok, map()} | error
+  def contract(%{id: id, contract_address: contract_address}) do
+    HttpClient.get("coins/#{id}/contract/#{contract_address}")
+  end
+
+  @type contract_market_chart_params :: %{
+          required(:id) => String.t(),
+          required(:contract_address) => String.t(),
+          required(:vs_currency) => String.t(),
+          required(:days) => String.t()
+        }
+
+  @spec contract_market_chart(contract_market_chart_params) :: {:ok, map()} | error
+  def contract_market_chart(params = %{id: id, contract_address: contract_address}) do
+    params =
+      params
+      |> Map.delete(:id)
+      |> Map.delete(:contract_address)
+
+    HttpClient.get("coins/#{id}/contract/#{contract_address}/market_chart", params)
+  end
+
+  @type contract_market_chart_range_params :: %{
+          required(:id) => String.t(),
+          required(:contract_address) => String.t(),
+          required(:vs_currency) => String.t(),
+          required(:from) => String.t(),
+          required(:to) => String.t()
+        }
+
+  @spec contract_market_chart_range(contract_market_chart_range_params) :: {:ok, map()} | error
+  def contract_market_chart_range(params = %{id: id, contract_address: contract_address}) do
+    params =
+      params
+      |> Map.delete(:id)
+      |> Map.delete(:contract_address)
+
+    HttpClient.get("coins/#{id}/contract/#{contract_address}/market_chart/range", params)
+  end
 end
