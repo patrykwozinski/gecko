@@ -100,14 +100,14 @@ defmodule ExGecko do
   end
 
   @type coins_params :: %{
-    required(:id) => String.t(),
-    optional(:localization) => String.t(),
-    optional(:tickers) => boolean(),
-    optional(:market_data) => boolean(),
-    optional(:community_data) => boolean(),
-    optional(:developer_data) => boolean(),
-    optional(:sparkline) => boolean(),
-  }
+          required(:id) => String.t(),
+          optional(:localization) => String.t(),
+          optional(:tickers) => boolean(),
+          optional(:market_data) => boolean(),
+          optional(:community_data) => boolean(),
+          optional(:developer_data) => boolean(),
+          optional(:sparkline) => boolean()
+        }
 
   @spec coins(coins_params) :: {:ok, map()} | error
   def coins(params = %{id: id}) do
