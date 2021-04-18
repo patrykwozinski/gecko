@@ -56,8 +56,8 @@ defmodule ExGecko do
   end
 
   @type coins_list_params :: %{
-    optional(:include_platform) => boolean()
-  }
+          optional(:include_platform) => boolean()
+        }
 
   @spec coins_list() :: {:ok, list(String.t())} | error
   @spec coins_list(coins_list_params) :: {:ok, list(String.t())} | error
