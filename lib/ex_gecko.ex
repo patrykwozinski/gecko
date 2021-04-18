@@ -109,7 +109,7 @@ defmodule ExGecko do
     optional(:sparkline) => boolean(),
   }
 
-  @spec coins(coins_params) :: {:ok, any()} | error
+  @spec coins(coins_params) :: {:ok, map()} | error
   def coins(params = %{id: id}) do
     params = Map.delete(params, :id)
 
