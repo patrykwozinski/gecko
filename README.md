@@ -26,5 +26,7 @@ In a current version we're not supporting all CoinGecko's endpoints yet. There i
 - `api/v3/simple/supported_vs_currencies`
 
 #### Coins
+- `api/v3/coins/list`
 - `api/v3/coins/markets`
 - `api/v3/coins/{id}/market_chart`
+- `api/v3/coins/{id}`
