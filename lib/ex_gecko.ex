@@ -211,4 +211,22 @@ defmodule ExGecko do
 
     HttpClient.get("coins/#{id}/contract/#{contract_address}/market_chart", params)
   end
+
+  @type contract_market_chart_range_params :: %{
+          required(:id) => String.t(),
+          required(:contract_address) => String.t(),
+          required(:vs_currency) => String.t(),
+          required(:from) => String.t(),
+          required(:to) => String.t()
+        }
+
+  @spec contract_market_chart_range(contract_market_chart_range_params) :: {:ok, map()} | error
+  def contract_market_chart_range(params = %{id: id, contract_address: contract_address}) do
+    params =
+      params
+      |> Map.delete(:id)
+      |> Map.delete(:contract_address)
+
+    HttpClient.get("coins/#{id}/contract/#{contract_address}/market_chart/range", params)
+  end
 end
