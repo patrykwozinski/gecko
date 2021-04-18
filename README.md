@@ -31,3 +31,4 @@ In a current version we're not supporting all CoinGecko's endpoints yet. There i
 - `api/v3/coins/{id}/market_chart`
 - `api/v3/coins/{id}`
 - `api/v3/coins/{id}/tickers`
+- `api/v3/coins/{id}/history`
