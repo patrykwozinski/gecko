@@ -85,20 +85,6 @@ defmodule ExGecko do
     HttpClient.get("coins/markets", params)
   end
 
-  @type coins_market_chart_params :: %{
-          required(:id) => String.t(),
-          required(:vs_currency) => String.t(),
-          required(:days) => pos_integer(),
-          optional(:interval) => String.t()
-        }
-
-  @spec coins_market_chart(coins_market_chart_params) :: {:ok, map()} | error
-  def coins_market_chart(params = %{id: id}) do
-    params = Map.delete(params, :id)
-
-    HttpClient.get("coins/#{id}/market_chart", params)
-  end
-
   @type coins_params :: %{
           required(:id) => String.t(),
           optional(:localization) => String.t(),
@@ -143,5 +129,19 @@ defmodule ExGecko do
     params = Map.delete(params, :id)
 
     HttpClient.get("coins/#{id}/history", params)
+  end
+
+  @type coins_market_chart_params :: %{
+          required(:id) => String.t(),
+          required(:vs_currency) => String.t(),
+          required(:days) => pos_integer(),
+          optional(:interval) => String.t()
+        }
+
+  @spec coins_market_chart(coins_market_chart_params) :: {:ok, map()} | error
+  def coins_market_chart(params = %{id: id}) do
+    params = Map.delete(params, :id)
+
+    HttpClient.get("coins/#{id}/market_chart", params)
   end
 end
