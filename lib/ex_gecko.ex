@@ -144,4 +144,18 @@ defmodule ExGecko do
 
     HttpClient.get("coins/#{id}/market_chart", params)
   end
+
+  @type coins_market_chart_range_params :: %{
+          required(:id) => String.t(),
+          required(:vs_currency) => String.t(),
+          required(:from) => String.t(),
+          required(:to) => String.t()
+        }
+
+  @spec coins_market_chart_range(coins_market_chart_range_params) :: {:ok, map()} | error
+  def coins_market_chart_range(params = %{id: id}) do
+    params = Map.delete(params, :id)
+
+    HttpClient.get("coins/#{id}/market_chart/range", params)
+  end
 end
