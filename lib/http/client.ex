@@ -1,4 +1,4 @@
-defmodule ExGecko.HttpClient do
+defmodule Gecko.HttpClient do
   @moduledoc """
   This module represents Http connection to the CoinGecko API V3.
   """

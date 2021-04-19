@@ -1,12 +1,12 @@
-defmodule ExGecko.MixProject do
+defmodule Gecko.MixProject do
   use Mix.Project
 
   @version "0.1.0"
 
   def project do
     [
-      app: :ex_gecko,
-      name: "ExGecko",
+      app: :gecko,
+      name: "Gecko",
       description:
         "A tool to retrieve an information about cryptocurrency world from a CoinGecko.com",
       version: @version,
@@ -49,10 +49,10 @@ defmodule ExGecko.MixProject do
 
   defp package do
     [
-      name: "ex_gecko",
+      name: "gecko",
       files: ~w(lib .formatter.exs mix.exs README*),
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/patrykwozinski/ex-gecko"}
+      links: %{"GitHub" => "https://github.com/patrykwozinski/gecko"}
     ]
   end
 end

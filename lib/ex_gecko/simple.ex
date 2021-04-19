@@ -1,7 +1,7 @@
-defmodule ExGecko.Simple do
+defmodule Gecko.Simple do
   @moduledoc false
 
-  alias ExGecko.HttpClient
+  alias Gecko.HttpClient
 
   @type error :: {:error, {:http_error | :request_error, String.t()}}
 
