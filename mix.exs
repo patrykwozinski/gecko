@@ -49,6 +49,7 @@ defmodule ExGecko.MixProject do
 
   defp package do
     [
+      name: "ex_gecko",
       files: ~w(lib .formatter.exs mix.exs README*),
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/patrykwozinski/ex-gecko"}
