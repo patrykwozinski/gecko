@@ -6,9 +6,6 @@ defmodule ExGecko do
 
   More information: [Explore API](https://www.coingecko.com/en/api#explore-api)
   """
-  alias ExGecko.HttpClient
-
-  @type error :: {:error, {:http_error | :request_error, String.t()}}
 
   defdelegate ping, to: ExGecko.General
 
