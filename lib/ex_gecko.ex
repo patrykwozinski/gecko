@@ -10,50 +10,11 @@ defmodule ExGecko do
 
   @type error :: {:error, {:http_error | :request_error, String.t()}}
 
-  @spec ping() :: :ok | error
-  def ping do
-    HttpClient.get("ping")
-    |> case do
-      {:ok, _response} -> :ok
-      error -> error
-    end
-  end
+  defdelegate ping, to: ExGecko.General
 
-  @type simple_price_params :: %{
-          required(:ids) => String.t(),
-          required(:vs_currencies) => String.t(),
-          optional(:include_market_cap) => boolean(),
-          optional(:include_24hr_vol) => boolean(),
-          optional(:include_24hr_change) => boolean(),
-          optional(:include_last_updated_at) => boolean()
-        }
-
-  @spec simple_price(simple_price_params) :: {:ok, any()} | error
-  def simple_price(params) do
-    HttpClient.get("simple/price", params)
-  end
-
-  @type simple_token_price_params :: %{
-          required(:id) => String.t(),
-          required(:contract_addresses) => String.t(),
-          required(:vs_currencies) => String.t(),
-          optional(:include_market_cap) => boolean(),
-          optional(:include_24hr_vol) => boolean(),
-          optional(:include_24hr_change) => boolean(),
-          optional(:include_last_updated_at) => boolean()
-        }
-
-  @spec simple_token_price(simple_token_price_params) :: {:ok, any()} | error
-  def simple_token_price(params = %{id: id}) do
-    params = Map.delete(params, :id)
-
-    HttpClient.get("simple/token_price/#{id}", params)
-  end
-
-  @spec simple_supported_vs_currencies() :: {:ok, list(String.t())} | error
-  def simple_supported_vs_currencies do
-    HttpClient.get("simple/supported_vs_currencies")
-  end
+  defdelegate simple_price(params), to: ExGecko.Simple, as: :price
+  defdelegate simple_token_price(params), to: ExGecko.Simple, as: :token_price
+  defdelegate simple_supported_vs_currencies, to: ExGecko.Simple, as: :supported_vs_currencies
 
   @type coins_list_params :: %{
           optional(:include_platform) => boolean()
