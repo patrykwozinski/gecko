@@ -9,7 +9,7 @@ The package can be installed by adding `gecko` to your list of dependencies in `
 ```elixir
 def deps do
   [
-    {:gecko, "~> 0.1.0"}
+    {:gecko, "~> 0.1"}
   ]
 end
 ```
