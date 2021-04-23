@@ -1,4 +1,4 @@
-# Gecko [![Build Status](https://github.com/patrykwozinski/ex-gecko/workflows/CI/badge.svg)](https://github.com/patrykwozinski/gecko/actions) [![Hex pm](https://img.shields.io/hexpm/v/gecko.svg?style=flat)](https://hex.pm/packages/gecko)
+# Gecko [![Build Status](https://github.com/patrykwozinski/gecko/workflows/CI/badge.svg)](https://github.com/patrykwozinski/gecko/actions) [![Hex pm](https://img.shields.io/hexpm/v/gecko.svg?style=flat)](https://hex.pm/packages/gecko)
 
 This package is an adapter for using [CoinGecko](https://coingecko.com). Still under development.
 
