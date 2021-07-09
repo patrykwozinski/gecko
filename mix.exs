@@ -36,7 +36,7 @@ defmodule Gecko.MixProject do
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:httpoison, "~> 1.8"},
       {:poison, "~> 4.0"},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+      {:ex_doc, ">= 0.24.2", only: :dev, runtime: false}
     ]
   end
 
