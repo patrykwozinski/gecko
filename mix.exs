@@ -35,7 +35,7 @@ defmodule Gecko.MixProject do
       {:dialyxir, "~> 1.1", only: [:dev], runtime: false},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:httpoison, "~> 1.8"},
-      {:poison, "~> 4.0"},
+      {:poison, "~> 5.0"},
       {:ex_doc, ">= 0.25.2", only: :dev, runtime: false}
     ]
   end
