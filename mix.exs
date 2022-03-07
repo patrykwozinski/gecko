@@ -31,7 +31,7 @@ defmodule Gecko.MixProject do
 
   defp deps do
     [
-      {:typed_struct, "~> 0.2"},
+      {:typed_struct, "~> 0.3"},
       {:dialyxir, "~> 1.1", only: [:dev], runtime: false},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:httpoison, "~> 1.8"},
